@@ -33,6 +33,13 @@ export function getAllProducts(page, size) {
     });
 }
 
+export function getProductById(id) {
+    return request({
+        url: API_BASE_URL + '/products/' + id,
+        method: 'GET'
+    });
+}
+
 export function getAllCategories(page, size) {
     page = page || 0;
     size = size || PAGEABLE_LIST_SIZE;
@@ -47,6 +54,15 @@ export function createProduct(product) {
     return request({
         url: API_BASE_URL + '/products/',
         method: 'POST',
+        accept: 'application/json',
+        body: JSON.stringify(product)
+    });
+}
+
+export function updateProduct(product) {
+    return request({
+        url: API_BASE_URL + '/products/' + product.id,
+        method: 'PUT',
         accept: 'application/json',
         body: JSON.stringify(product)
     });

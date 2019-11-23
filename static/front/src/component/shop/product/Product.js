@@ -11,7 +11,7 @@ class Product extends Component {
             <div className="product-content">
                 <div className="product-header">
                     <div className="product-creator-info">
-                        <Link className="creator-link" to={`/product/${this.props.product.id}`}>
+                        <Link className="creator-link" to={`/products/${this.props.product.id}`}>
                             <Avatar className="product-creator-avatar"
                                     style={{backgroundColor: getAvatarColor(this.props.product.category.name)}}>
                                 {this.props.product.category.name.toUpperCase()}
